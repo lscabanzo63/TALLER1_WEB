@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="header-site" class="header-module">
+        <header class="main-header">
+        
+            <div class="header-logo">
+            <img src="assets/pokeapi_256.3fa72200.png" alt="Logo" />
+            </div>
+            <nav class="header-nav">
+            <ul>
+                <li><a href="https://pokeapi.co/">API ORIGINAL</a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>
+            </nav>
+        </header>
+    </div>
+
+    <main class="container">
+        <div class="section-filter">
+            <input type="text" class="search-input" placeholder="Buscar por tipo...">
+                <button class="btn">Buscar</button>
+                <button class="btn btn-secondary">Traer todos</button>
+        </div>
+        <div class="pokemon-section">
+            <div id="placeholder" class="placeholder">
+                <img src="assets/pokeapi_256.3fa72200.png" alt="Placeholder Pokémon">
+            </div>
+            <div class="grid-pokemon"></div>
+            <div class="pagination">
+                <button id="prevBtn" class="btn">Anterior</button>
+                    <span id="pageIndicator">Página 1</span>
+                <button id="nextBtn" class="btn">Siguiente</button>
+            </div>           
+        </div>
+        </div>
+    </main>
+
+<script src="js/app.js"></script>
+</body>
+</html>

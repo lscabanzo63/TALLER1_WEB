@@ -1,0 +1,190 @@
+.main-header {
+  height: 3.125rem;
+  max-width: auto;   /* ancho máximo */
+  min-width: 25rem;    /* ancho mínimo para evitar que se rompa */
+  background-color: #009485;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem; /* espacio entre logo y nav */
+  padding: 0 1rem; /* pequeño margen lateral */
+  box-sizing: border-box; /* asegura que el padding no rompa el tamaño */
+}
+
+.header-logo img {
+  height: 40px;
+  width: auto;
+}
+
+.header-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0 10px;
+  white-space: nowrap; /* evita que los enlaces salten a otra línea */
+}
+
+
+.header-nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+
+.header-nav a:hover {
+  text-decoration: underline;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  overflow-x: auto;
+  background: #1e2129; 
+}
+
+.container{
+  flex-grow: 1;
+}
+
+.section-filter{
+  margin: 50px;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.right{
+  margin-left: 20px;
+  position: sticky;
+}
+
+ .search-input {
+    width: 250px;
+    padding: 8px 12px;
+    border: 2px solid #009485;
+    border-radius: 25px;
+    outline: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  .search-input:focus {
+    border-color: #00796b;
+    box-shadow: 0 0 6px rgba(0, 148, 133, 0.4);
+  }
+
+  .search-input::placeholder {
+    color: #888;
+    font-style: italic;
+  }
+
+   .btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 25px;
+    background-color: #009485;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .btn:hover {
+    background-color: #00796b;
+    transform: translateY(-1px);
+  }
+
+  .btn:active {
+    transform: translateY(1px);
+  }
+
+  .btn-secondary {
+    background-color: #009485;
+  }
+
+  .btn-secondary:hover {
+    background-color: #009485;
+  }
+
+
+
+  .grid-pokemon{
+    display: grid;
+    grid-template-columns:repeat(
+        auto-fill,
+        minmax(200px, 1fr)
+    );
+    gap: 16px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  img{
+    width: 100%;
+    height: auto;
+  }
+
+  .tarjeta {
+  width: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ddd;
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+}
+
+.tarjeta:hover {
+  transform: scale(1.05);
+}
+
+.tarjeta img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.pie {
+  margin-top: 10px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: black;
+  margin-right: 5px;
+  text-transform: capitalize;
+}
+
+.pagination {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  color: white;
+}
+
+.placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.placeholder img {
+  max-width: 200px;
+  opacity: 0.5;
+}
+
+.error-text {
+  color: #ffb3b3;
+  font-size: 14px;
+}
+.search-input.error {
+  border-color: #ff6b6b !important;
+  box-shadow: 0 0 6px rgba(255, 107, 107, 0.4);
+}
