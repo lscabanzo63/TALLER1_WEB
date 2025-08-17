@@ -48,11 +48,28 @@ body {
   flex-grow: 1;
 }
 
-.section-filter{
-  margin: 50px;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
+.section-filter {
+  display: flex;
+  flex-direction: column; /* por defecto: en columna */
   gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 100%;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* A partir de mobile M en adelante (≥375px) */
+@media (min-width: 375px) {
+  .section-filter {
+    flex-direction: row;   /* input y botones en fila */
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .right{
@@ -110,16 +127,34 @@ body {
 
 
 
-  .grid-pokemon{
-    display: grid;
-    grid-template-columns:repeat(
-        auto-fill,
-        minmax(200px, 1fr)
-    );
-    gap: 16px;
-    max-width: 700px;
-    margin: 0 auto;
+.grid-pokemon {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+  );
+  gap: 16px;
+  max-width: 700px;
+  margin: 0 auto;
+  justify-content: center;    /* centra las tarjetas cuando hay menos columnas */
+}
+
+/* Mobile S y M → asegurar centrado */
+@media (max-width: 424px) {
+  .grid-pokemon {
+    grid-template-columns: 1fr;  
+    justify-items: center;       /* tarjeta al centro */
   }
+}
+
+/* Mobile L → más espacio entre tarjetas */
+@media (min-width: 425px) and (max-width: 767px) {
+  .grid-pokemon {
+    gap: 24px;
+    justify-content: center;
+  }
+}
+
 
   img{
     width: 100%;
@@ -179,6 +214,13 @@ body {
   max-width: 200px;
   opacity: 0.5;
 }
+
+#networkError {
+  color: #ff6b6b;
+  font-size: 15px;
+  font-weight: bold;
+}
+
 
 .error-text {
   color: #ffb3b3;

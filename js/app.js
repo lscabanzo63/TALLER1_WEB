@@ -5,11 +5,29 @@ async function fetchData(url) {
         return await res.json();
     } catch (error) {
         console.error("Error fetching data:", error);
+        showNetworkError("No se pudo conectar con el servidor. Intenta nuevamente.");
         return null;
     }
 }
 
-// Función para obtener lista de pokemones con sus detalles
+function showNetworkError(msg) {
+    const err = document.getElementById("networkError");
+    if (err) {
+        err.textContent = msg;
+        err.style.display = "block";
+    }
+}
+
+function clearNetworkError() {
+    const err = document.getElementById("networkError");
+    if (err) {
+        err.style.display = "none";
+    }
+}
+
+
+
+
 async function getPokemons(limit = 20, offset = 0) {
     const baseUrl = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
     const data = await fetchData(baseUrl);

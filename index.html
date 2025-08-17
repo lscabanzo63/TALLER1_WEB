@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aplicación web que permite buscar y filtrar Pokémon por tipo usando la PokeAPI. Visualiza tarjetas con imágenes, nombres y tipos de cada Pokémon.">
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>Pokémon Finder</title>
 </head>
 <body>
     <div id="header-site" class="header-module">
@@ -16,23 +17,28 @@
             <nav class="header-nav">
             <ul>
                 <li><a href="https://pokeapi.co/">API ORIGINAL</a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
             </ul>
             </nav>
         </header>
     </div>
 
     <main class="container">
-        <div class="section-filter">
+       <div class="section-filter">
             <input type="text" class="search-input" placeholder="Buscar por tipo...">
+            <div class="btn-group">
                 <button class="btn">Buscar</button>
                 <button class="btn btn-secondary">Traer todos</button>
+            </div>
         </div>
+
         <div class="pokemon-section">
             <div id="placeholder" class="placeholder">
                 <img src="assets/pokeapi_256.3fa72200.png" alt="Placeholder Pokémon">
             </div>
+            <div id="networkError" class="error-text" style="display: none; text-align: center; margin-top: 20px;">
+                Ocurrió un problema de conexión. Intenta nuevamente más tarde.
+            </div>
+
             <div class="grid-pokemon"></div>
             <div class="pagination">
                 <button id="prevBtn" class="btn">Anterior</button>
